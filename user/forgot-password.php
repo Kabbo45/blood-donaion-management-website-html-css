@@ -1,12 +1,14 @@
 <?php require_once "controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style_user.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -17,14 +19,14 @@
                     <?php
                         if(count($errors) > 0){
                             ?>
-                            <div class="alert alert-danger text-center">
-                                <?php 
+                    <div class="alert alert-danger text-center">
+                        <?php 
                                     foreach($errors as $error){
                                         echo $error;
                                     }
                                 ?>
-                            </div>
-                            <?php
+                    </div>
+                    <?php
                         }
                     ?>
                     <div class="form-group">
@@ -37,6 +39,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>

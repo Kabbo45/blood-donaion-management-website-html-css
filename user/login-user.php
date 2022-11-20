@@ -63,14 +63,14 @@
 <body>
     <div class="banner">
         <div class="navbar">
-            <a href="index.html">
+            <a href="../index.html">
                 <img src="../images/logo.png" class="logo">
             </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="login-user.php">Login</a></li>
-                <li><a href="../html/search.html">Search Donor</a></li>
-                <li><a href="../admin_login.html">Admin</a></li>
+                <li><a href="../user/search.php">Search Donor</a></li>
+                <li><a href="../admin/login.php">Admin</a></li>
                 <li><a href="../html/contact.html">About Us</a></li>
             </ul>
         </div>

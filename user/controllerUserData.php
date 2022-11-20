@@ -58,7 +58,7 @@ if(isset($_POST['signup'])){
     }
 
 }
-    //if user click verification code submit button
+    //verification code submit button
     if(isset($_POST['check'])){
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
@@ -85,11 +85,11 @@ if(isset($_POST['signup'])){
         }
     }
 
-    //if user click login button
+    //login button
     if(isset($_POST['login'])){
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
-        $check_email = "SELECT * FROM users WHERE email = '$email'";
+        $check_email = "SELECT * FROM users WHERE email = '$email' AND admin_control=0";
         $res = mysqli_query($con, $check_email);
         if(mysqli_num_rows($res) > 0){
             $fetch = mysqli_fetch_assoc($res);
@@ -114,7 +114,7 @@ if(isset($_POST['signup'])){
         }
     }
 
-    //if user click continue button in forgot password form
+    //forgot password form
     if(isset($_POST['check-email'])){
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $check_email = "SELECT * FROM users WHERE email='$email'";
@@ -144,7 +144,7 @@ if(isset($_POST['signup'])){
         }
     }
 
-    //if user click check reset otp button
+    //reset otp button
     if(isset($_POST['check-reset-otp'])){
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
@@ -163,7 +163,7 @@ if(isset($_POST['signup'])){
         }
     }
 
-    //if user click change password button
+    //change password button
     if(isset($_POST['change-password'])){
         $_SESSION['info'] = "";
         $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -172,7 +172,7 @@ if(isset($_POST['signup'])){
             $errors['password'] = "Confirm password not matched!";
         }else{
             $code = 0;
-            $email = $_SESSION['email']; //getting this email using session
+            $email = $_SESSION['email'];
             $encpass = password_hash($password, PASSWORD_BCRYPT);
             $update_pass = "UPDATE users SET code = $code, password = '$encpass' WHERE email = '$email'";
             $run_query = mysqli_query($con, $update_pass);
@@ -186,7 +186,7 @@ if(isset($_POST['signup'])){
         }
     }
     
-   //if login now button click
+   //login button click
     if(isset($_POST['login-now'])){
         header('Location: login-user.php');
     }

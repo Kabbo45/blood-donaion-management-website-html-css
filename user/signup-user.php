@@ -1,6 +1,5 @@
 <?php require_once "controllerUserData.php"; ?>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
     <title> Sign Up </title>
@@ -62,14 +61,14 @@
 <body>
     <div class="banner">
         <div class="navbar">
-            <a href="index.html">
+            <a href="../index.html">
                 <img src="../images/logo.png" class="logo">
             </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="login-user.php">Login</a></li>
-                <li><a href="../html/search.html">Search Donor</a></li>
-                <li><a href="../admin_login.html">Admin</a></li>
+                <li><a href="../user/search.php">Search Donor</a></li>
+                <li><a href="../admin/login.php">Admin</a></li>
                 <li><a href="../html/contact.html">About Us</a></li>
             </ul>
         </div>
@@ -117,7 +116,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Age</span>
-                            <input type="number" placeholder="Enter your age" name="age" required>
+                            <input type="number" placeholder="Enter your age" name="age" min="18" max="99" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Password</span>
@@ -206,43 +205,44 @@
                             <option value="Tangail">Tangail</option>
                             <option value="Thakurgaon">Thakurgaon</option>
                             <textarea class="c" name="address_t" cols="44" placeholder="Enter detailed address" rows="3" required></textarea>
-                            <div class="gender-details">
-                                <input type="radio" name="gender" value="male" id="dot-1">
-                                <input type="radio" name="gender" value="female" id="dot-2">
-                                <input type="radio" name="gender" value="others" id="dot-3">
-                                <span class="gender-title">Gender</span>
-                                <div class="category">
-                                    <label for="dot-1">
-                                        <span class="dot one"></span>
-                                        <span class="gender">Male</span>
-                                    </label>
-                                    <label for="dot-2">
-                                        <span class="dot two"></span>
-                                        <span class="gender">Female</span>
-                                    </label>
-                                    <label for="dot-3">
-                                        <span class="dot three"></span>
-                                        <span class="gender">Prefer not to say</span>
-                                    </label>
-                                </div>
+                        </select>
+                        <div class="gender-details">
+                            <input type="radio" name="gender" value="male" id="dot-1">
+                            <input type="radio" name="gender" value="female" id="dot-2">
+                            <input type="radio" name="gender" value="others" id="dot-3">
+                            <span class="gender-title">Gender</span>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                                <label for="dot-3">
+                                    <span class="dot three"></span>
+                                    <span class="gender">Prefer not to say</span>
+                                </label>
                             </div>
-                            <div class="input-box">
-                                <span class="details">Blood Group</span>
-                                <select name="blood" required>
-                                    <option value="A-">A-</option>
-                                    <option value="A+">A+</option>
-                                    <option value="B-">B-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="O-">O-</option>
-                                    <option value="O+">O+</option>
-                                    <option value="AB-">AB-</option>
-                                    <option value="AB+">AB+</option>
-                                </select>
-                            </div>
-                            <div class="button">
-                                <input name="signup" type="submit" value="Sign Up">
-                            </div>
-                            <div class="link login-link text-center">Already a member? <a href="login-user.php">Login here</a></div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Blood Group</span>
+                            <select name="blood" required>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                            </select>
+                        </div>
+                        <div class="button">
+                            <input name="signup" type="submit" value="Sign Up">
+                        </div>
+                        <div class="link login-link text-center">Already a member? <a href="login-user.php">Login here</a></div>
                     </div>
                 </form>
             </div>
